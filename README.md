@@ -22,20 +22,12 @@
 #### 方法A: クローンして設定（推奨）
 ```bash
 # テンプレートをクローン（プロジェクト名は自由に変更）
-git clone https://github.com/yourusername/claude-lec.git my-react-learning
-cd my-react-learning
-
-# Gitのリモートを自分のリポジトリに変更（オプション）
-git remote remove origin
-git remote add origin https://github.com/yourusername/my-react-learning.git
-
-# 初回プッシュ（オプション）
-git push -u origin main
+git clone https://github.com/yourusername/claude-lec.git my-learning
 ```
 
 #### 方法B: GitHubでテンプレートとして使用
 1. このリポジトリのGitHubページで「Use this template」ボタンをクリック
-2. 新しいリポジトリ名を入力（例: `my-react-learning`）
+2. 新しいリポジトリ名を入力（例: `my-learning`）
 3. リポジトリを作成してクローン
 
 ### 2. 学習セッションを初期化
