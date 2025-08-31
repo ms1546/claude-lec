@@ -1,9 +1,10 @@
 {
   "mcpServers": {
     "github": {
-      "command": "node",
+      "command": "npx",
       "args": [
-        "${NODE_PATH}/node_modules/@modelcontextprotocol/server-github/dist/index.js"
+        "-y",
+        "@modelcontextprotocol/server-github"
       ],
       "env": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"

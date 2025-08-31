@@ -33,7 +33,6 @@ MCPを使用することで、Claude CodeからGitHubリポジトリを直接操
 ```bash
 # ~/.bashrc または ~/.zshrc に追加
 export GITHUB_TOKEN="your-github-personal-access-token"
-export NODE_PATH=$(npm root -g)
 ```
 
 変更を反映：
@@ -46,14 +45,11 @@ source ~/.bashrc  # または source ~/.zshrc
 PowerShellを管理者として実行：
 ```powershell
 [Environment]::SetEnvironmentVariable("GITHUB_TOKEN", "your-github-personal-access-token", "User")
-[Environment]::SetEnvironmentVariable("NODE_PATH", "$(npm root -g)", "User")
 ```
 
-### 3. GitHub MCP サーバーのインストール
+### 3. 依存関係について
 
-```bash
-npm install -g @modelcontextprotocol/server-github
-```
+このプロジェクトは `npx` を使用してGitHub MCPサーバーを実行するため、グローバルインストールは不要です。`npx` は必要に応じて自動的にパッケージをダウンロードして実行します。
 
 ### 4. MCP設定の確認
 
@@ -63,9 +59,10 @@ npm install -g @modelcontextprotocol/server-github
 {
   "mcpServers": {
     "github": {
-      "command": "node",
+      "command": "npx",
       "args": [
-        "${NODE_PATH}/node_modules/@modelcontextprotocol/server-github/dist/index.js"
+        "-y",
+        "@modelcontextprotocol/server-github"
       ],
       "env": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
@@ -74,6 +71,8 @@ npm install -g @modelcontextprotocol/server-github
   }
 }
 ```
+
+この設定により、プロジェクトをどこにcloneしても、`npx`が自動的にGitHub MCPサーバーを実行します。
 
 ### 5. Claude Codeでの確認
 
@@ -107,12 +106,17 @@ Claude Codeで以下のようなコマンドが使用できるようになりま
 1. 環境変数が正しく設定されているか確認：
    ```bash
    echo $GITHUB_TOKEN
-   echo $NODE_PATH
    ```
 
-2. GitHub MCPサーバーがインストールされているか確認：
+2. `npx`が正しく動作するか確認：
    ```bash
-   npm list -g @modelcontextprotocol/server-github
+   npx -y @modelcontextprotocol/server-github --version
+   ```
+
+3. Node.jsとnpmが最新バージョンか確認：
+   ```bash
+   node --version
+   npm --version
    ```
 
 ### エラー: 認証エラー
@@ -121,10 +125,18 @@ Claude Codeで以下のようなコマンドが使用できるようになりま
 2. トークンに必要な権限が付与されているか確認
 3. 環境変数 `GITHUB_TOKEN` が正しく設定されているか確認
 
-### エラー: パスが見つからない
+### エラー: npxの実行に失敗
 
-1. `NODE_PATH` が正しく設定されているか確認
-2. 必要に応じて `.mcp.json` のパスを手動で調整
+1. インターネット接続を確認（`npx`はパッケージをダウンロードする必要があります）
+2. npmのキャッシュをクリア：
+   ```bash
+   npm cache clean --force
+   ```
+3. プロキシ設定が必要な場合は、npmにプロキシを設定：
+   ```bash
+   npm config set proxy http://proxy.example.com:8080
+   npm config set https-proxy http://proxy.example.com:8080
+   ```
 
 ## セキュリティに関する注意
 
