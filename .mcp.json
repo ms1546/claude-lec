@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "github": {
+      "command": "node",
+      "args": [
+        "${NODE_PATH}/node_modules/@modelcontextprotocol/server-github/dist/index.js"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      }
+    }
+  }
+}

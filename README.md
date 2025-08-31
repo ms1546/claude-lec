@@ -129,6 +129,10 @@ A: はい。Claude Codeがあなたのレベルに合わせて学習内容を調
 **Q: 複数の技術を同時に学べますか？**
 A: はい。関連する技術を組み合わせた学習計画を作成できます。
 
+## GitHub連携（オプション）
+
+GitHub MCPを設定することで、Claude CodeからGitHubリポジトリを直接操作できます。詳細は[MCP_SETUP.md](docs/MCP_SETUP.md)をご覧ください。
+
 ## 貢献方法
 
 テンプレートの改善や新機能の提案は歓迎です。詳細は[CONTRIBUTING.md](docs/CONTRIBUTING.md)をご覧ください。
