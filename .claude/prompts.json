@@ -1,0 +1,104 @@
+{
+  "discovery_prompts": {
+    "initial_greeting": "こんにちは！Claude Learning Experienceへようこそ。\n新しい技術を学習する準備をしましょう。",
+    
+    "technology_inquiry": {
+      "question": "学習したい技術やフレームワークは何ですか？（複数可）",
+      "examples": "React, Vue.js, Angular, Node.js, Python, Django, Go, Rust, AWS, Docker, Kubernetes, GraphQL, MongoDB, PostgreSQL など",
+      "follow_up": "他に組み合わせて学びたい技術はありますか？"
+    },
+    
+    "experience_assessment": {
+      "question": "現在のプログラミング経験レベルは？",
+      "options": {
+        "beginner": "初心者（プログラミング経験1年未満）",
+        "intermediate": "中級者（1-3年の経験）", 
+        "advanced": "上級者（3年以上の経験）",
+        "expert": "エキスパート（5年以上、複数言語に精通）"
+      },
+      "clarification": "選択した技術での経験はいかがですか？"
+    },
+    
+    "project_type_selection": {
+      "question": "作りたいアプリケーションのタイプは？",
+      "options": {
+        "web_application": "Webアプリケーション（SPA、MPA、SSR/SSGなど）",
+        "api_server": "APIサーバー（REST、GraphQL、gRPCなど）",
+        "mobile_app": "モバイルアプリ（ネイティブ、クロスプラットフォーム）",
+        "cli_tool": "CLIツール（開発ツール、自動化スクリプト）",
+        "desktop_app": "デスクトップアプリケーション",
+        "library": "ライブラリ/パッケージ",
+        "data_pipeline": "データパイプライン/ETL",
+        "machine_learning": "機械学習/AI アプリケーション",
+        "blockchain": "ブロックチェーン/Web3 アプリケーション",
+        "iot_system": "IoTシステム",
+        "game": "ゲーム開発",
+        "other": "その他（具体的に教えてください）"
+      }
+    },
+    
+    "time_commitment": {
+      "question": "学習に使える時間は？",
+      "options": {
+        "weekend": "週末のみ（週5-10時間）",
+        "part_time": "平日も含む（週10-20時間）",
+        "full_time": "フルタイム（週20時間以上）"
+      },
+      "duration_inquiry": "目標とする学習期間はありますか？"
+    },
+    
+    "learning_goals": {
+      "question": "この学習を通じて達成したい具体的な目標はありますか？",
+      "examples": [
+        "転職のためのポートフォリオ作成",
+        "現在の仕事で使える技術の習得",
+        "個人プロジェクトの開発",
+        "新しい技術への好奇心",
+        "特定の資格取得の準備"
+      ]
+    },
+    
+    "constraints": {
+      "question": "学習にあたって考慮すべき制約はありますか？",
+      "examples": [
+        "特定のOSでの開発（Windows/Mac/Linux）",
+        "クラウドサービスの利用可否",
+        "予算の制限",
+        "既存システムとの連携要件",
+        "チーム開発の考慮"
+      ]
+    }
+  },
+  
+  "project_generation_prompts": {
+    "beginner_friendly": "初心者に優しく、段階的に複雑さを増していけるプロジェクトを提案します。",
+    "intermediate_challenging": "基礎を固めながら、実践的なスキルを身につけられるプロジェクトを設計します。",
+    "advanced_comprehensive": "実務レベルの複雑さを持ち、最新のベストプラクティスを適用するプロジェクトを構築します。",
+    "expert_innovative": "最先端の技術や高度なアーキテクチャを探求できるプロジェクトを提案します。"
+  },
+  
+  "adaptive_responses": {
+    "encouragement": [
+      "素晴らしい選択です！",
+      "その組み合わせは学習効果が高いですね。",
+      "実践的なスキルが身につく技術スタックです。"
+    ],
+    "clarification": [
+      "もう少し詳しく教えていただけますか？",
+      "具体的にはどのような機能を実装したいですか？",
+      "その技術を選んだ理由を教えていただけますか？"
+    ],
+    "adjustment": [
+      "もう少しシンプルなアプローチから始めましょうか？",
+      "より挑戦的な機能を追加してみましょうか？",
+      "別の視点からアプローチしてみましょう。"
+    ]
+  },
+  
+  "phase_transition_prompts": {
+    "phase_complete": "素晴らしい！{phase_name}が完了しました。",
+    "next_phase_intro": "次は{next_phase_name}に進みましょう。",
+    "review_prompt": "実装したコードを一緒にレビューしてみましょう。",
+    "reflection": "ここまでで学んだことを振り返ってみましょう。"
+  }
+}

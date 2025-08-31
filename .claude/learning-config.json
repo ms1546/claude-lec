@@ -1,0 +1,60 @@
+{
+  "version": "2.0.0",
+  "learning_framework": {
+    "phases": [
+      {
+        "name": "discovery",
+        "description": "技術選択とプロジェクト定義",
+        "activities": ["技術ヒアリング", "プロジェクトタイプ決定", "学習計画作成"]
+      },
+      {
+        "name": "foundation",
+        "description": "基礎環境構築と基本実装",
+        "activities": ["環境セットアップ", "基本構造作成", "Hello World実装"]
+      },
+      {
+        "name": "core_features",
+        "description": "コア機能の実装",
+        "activities": ["主要機能の実装", "データ管理", "基本的なテスト"]
+      },
+      {
+        "name": "advanced_features",
+        "description": "応用機能とベストプラクティス",
+        "activities": ["高度な機能実装", "最適化", "セキュリティ強化"]
+      },
+      {
+        "name": "polish",
+        "description": "仕上げとデプロイ",
+        "activities": ["リファクタリング", "ドキュメント作成", "デプロイ"]
+      }
+    ],
+    "project_types": [
+      "web_application",
+      "api_server",
+      "mobile_app",
+      "cli_tool",
+      "library",
+      "data_pipeline",
+      "machine_learning",
+      "blockchain",
+      "iot_system",
+      "game"
+    ],
+    "complexity_levels": [
+      "beginner",
+      "intermediate",
+      "advanced",
+      "expert"
+    ]
+  },
+  "assessment_criteria": {
+    "code_quality": ["可読性", "保守性", "拡張性", "パフォーマンス"],
+    "best_practices": ["設計パターン", "エラーハンドリング", "セキュリティ", "テスト"],
+    "learning_outcomes": ["概念理解", "実装能力", "問題解決", "デバッグスキル"]
+  },
+  "dynamic_generation": {
+    "enable_ai_planning": true,
+    "customize_per_user": true,
+    "adaptive_difficulty": true
+  }
+}
