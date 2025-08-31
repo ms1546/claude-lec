@@ -49,6 +49,13 @@ next-env.d.ts
 learning-progress/
 workspace/
 
+# Session management files (セッション管理ファイル)
+.claude/session/current-session.json
+.claude/session/progress.md
+.claude/session/next-steps.md
+# プロジェクトルートの進捗ファイル
+LEARNING_STATUS.md
+
 # OS files
 Thumbs.db
 *.swp

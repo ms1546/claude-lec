@@ -17,14 +17,43 @@
 
 ## 使い方
 
-### 1. リポジトリをクローン
+### 1. このテンプレートから自分の学習リポジトリを作成
 
+#### 方法A: クローンして設定（推奨）
 ```bash
-git clone https://github.com/yourusername/claude-lec.git
-cd claude-lec
+# テンプレートをクローン（プロジェクト名は自由に変更）
+git clone https://github.com/yourusername/claude-lec.git my-react-learning
+cd my-react-learning
+
+# Gitのリモートを自分のリポジトリに変更（オプション）
+git remote remove origin
+git remote add origin https://github.com/yourusername/my-react-learning.git
+
+# 初回プッシュ（オプション）
+git push -u origin main
 ```
 
-### 2. Claude Codeを起動
+#### 方法B: GitHubでテンプレートとして使用
+1. このリポジトリのGitHubページで「Use this template」ボタンをクリック
+2. 新しいリポジトリ名を入力（例: `my-react-learning`）
+3. リポジトリを作成してクローン
+
+### 2. 学習セッションを初期化
+
+```bash
+# セッション管理ファイルを初期化
+./scripts/init-session.sh
+```
+
+このスクリプトは以下のファイルを作成します：
+- `.claude/session/current-session.json` - 現在の学習状態
+- `.claude/session/progress.md` - 進捗記録
+- `.claude/session/next-steps.md` - 次のアクション
+- `LEARNING_STATUS.md` - 人間が読める進捗ファイル
+
+※ これらのファイルは`.gitignore`に登録されているため、個人の学習記録はローカルに保持されます。
+
+### 3. Claude Codeを起動
 
 ```bash
 claude code .
@@ -89,13 +118,23 @@ Claude Codeが以下のようにヒアリングを始めます：
 
 ```
 claude-lec/
-├── .claude/               # Claude Code設定とプロンプト
-├── templates/             # 抽象的なテンプレート
-│   ├── project-types/    # プロジェクトタイプ別テンプレート
-│   ├── learning-phases/  # 学習フェーズ別ガイド
-│   ├── review-prompts/   # レビュー用プロンプト
-│   └── assessment/       # 評価基準
-└── docs/                 # ドキュメント
+├── .claude/                      # Claude Code設定
+│   ├── learning-config.json     # 学習フレームワーク設定
+│   └── session/                 # セッション管理（テンプレート）
+│       ├── *.json.example       # JSONテンプレート
+│       └── *.md.template        # Markdownテンプレート
+├── templates/                    # 学習テンプレート
+│   ├── project-types/           # プロジェクトタイプ別
+│   ├── learning-phases/         # 学習フェーズ別ガイド
+│   ├── review-prompts/          # レビュー用プロンプト
+│   ├── assessment/              # 評価基準
+│   ├── tech-stacks/             # 技術スタック別ガイド
+│   ├── best-practices/          # ベストプラクティス
+│   └── LEARNING_STATUS.md       # 進捗記録テンプレート
+├── scripts/                      # ユーティリティスクリプト
+│   └── init-session.sh          # セッション初期化
+├── docs/                         # ドキュメント
+└── CLAUDE.md                     # Claude Code用ガイダンス
 ```
 
 ## Claude Codeとの対話例
